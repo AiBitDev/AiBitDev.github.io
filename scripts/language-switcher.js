@@ -53,7 +53,7 @@ const translations = {
     interview_a5: "- Start small, but start now. Build things, break things, and never stop asking why. The tech will change, but your ability to think critically and adapt is your real superpower.",
     //Interview End
     work_title: "Let's Work Together On Your Next Project!",
-    contact_btn: "Contact Me",
+    contact_btn: "Email Me",
 
     view_fullscreen: "FullScreen",
     project_category_games: "Games Projects",
@@ -130,7 +130,7 @@ const translations = {
     interview_a5: "Commencez petit, mais commencez maintenant. Créez, cassez, et ne cessez jamais de poser la question pourquoi. La technologie évoluera, mais votre capacité à penser de manière critique et à vous adapter est votre véritable super-pouvoir.",
     //Interview End
     work_title: "Travaillons Ensemble Sur Votre Prochain Projet !",
-    contact_btn: "Contactez-moi",
+    contact_btn: "envoyez-moi un e-mail",
 
     view_fullscreen: "Plein Écran",
     project_category_games: "Projects Jeux",
@@ -206,7 +206,7 @@ const translations = {
     interview_a5: "ابدأ صغيرًا، لكن ابدأ الآن. ابنِ أشياء، اخطئ، ولا تتوقف عن طرح السؤال لماذا. التقنية ستتغير، لكن قدرتك على التفكير النقدي والتأقلم هي قوتك الحقيقية.",
     //Interview End
     work_title: "لنعمل معًا على مشروعك القادم!",
-    contact_btn: "تواصل معي",
+    contact_btn: "أرسل لي بريدا إلكترونيا",
     
     view_fullscreen: "ملء الشاشة",
     project_category_games: "منتجات الألعاب",
@@ -241,7 +241,8 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n-link]').forEach(element => {
     const linkKey = element.getAttribute('data-i18n-link');
     if (translations[lang] && translations[lang][linkKey]) {
-      element.textContent = translations[lang][linkKey];
+      element.href = translations[lang][linkKey];
+      element.target = "_blank";
     }
   });
   
