@@ -16,7 +16,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./images/img-logo.png" type="image/svg+xml">
 
   <!-- 
     - google font link
@@ -24,12 +24,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/font/font.css">
 
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <!-- 
     - preload images
@@ -158,8 +157,8 @@
             <h1 class="h1 big-title" data-i18n="welcome">Bring Your Ideas Into Life.</h1>
 
             <div class="wrapper">
-              <a href="#" class="btn btn:hover">
-                <span class="span">Download CV</span>
+              <a href="#" class="btn btn:hover download-btn" data-i18n-link="portfolio_link" >
+                <span class="span" data-i18n="dwonload_cv">Download CV</span>
 
                 <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
               </a>
@@ -635,7 +634,7 @@
             <div class="card-content">
               <p class="card-subtitle" data-i18n="project_category_games">Games Products</p>
               <h3 class="title h3">
-                <a href="#" class="card-title" data-i18n="project_title_godot">Godot Engine (GDSCRIPT)</a>
+                <a href="#" class="card-title" data-i18n="project_title_godot">Godot Engine (GDSCRIPT). Download CV</a>
               </h3>
             </div>
           </div>
@@ -655,7 +654,7 @@
             <div class="card-content">
               <p class="card-subtitle" data-i18n="project_category_mobile">Mobile Products</p>
               <h3 class="title h3">
-                <a href="#" class="card-title" data-i18n="project_title_android">Android Studio (Kotlin)</a>
+                <a href="#" class="card-title" data-i18n="project_title_android">Android Studio (Kotlin). Download CV</a>
               </h3>
             </div>
           </div>
@@ -675,7 +674,7 @@
             <div class="card-content">
               <p class="card-subtitle" data-i18n="project_category_web">Web Product</p>
               <h3 class="title h3">
-                <a href="#" class="card-title" data-i18n="project_title_react">React (JavaScript)</a>
+                <a href="#" class="card-title" data-i18n="project_title_react">React (JavaScript). Download CV</a>
               </h3>
             </div>
           </div>
@@ -724,21 +723,9 @@
 
           <div class="contact-content">
 
-          <form class="contact-form">
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSd9USQb85cA4DcF1TmgPsuPlrrxX3aE0nVlGxuv8xmDetButQ/viewform" 
-              width="100%" 
-              height="800" 
-              frameborder="10" 
-              marginheight="0" 
-              marginwidth="0"
-              class="google-form-iframe"
-            >Loading…</iframe>
-          </form>
-
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.479641850507!2d3.4705712745816175!3d36.75905947001969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e69007ef60757%3A0x1ea6de6d8861bb19!2sBoumerdes%20ville!5e0!3m2!1sfr!2sdz!4v1749340038328!5m2!1sfr!2sdz"
-              width="600" height="800" style="border: 0;" loading="lazy"
+              width="100%" height="600" style="border: 0;" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 
             <ul class="contact-list">
@@ -837,7 +824,7 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+  <script src="./scripts/main-script.js"></script>
   <script src="./scripts/language-switcher.js"></script>
 
   <!-- 

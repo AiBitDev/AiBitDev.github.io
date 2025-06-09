@@ -5,9 +5,11 @@ const translations = {
     home: "Home",
     services: "Services",
     about: "About",
+    cv_link: "./downloads/cv-en.pdf",
 
     welcome: "Bringing digital visions to life.",
     welcome_subline: "Let's build something extraordinary together",
+    dwonload_cv: "Download CV",
 
     mobile_development: "Mobile Development",
     web_development: "Web Development", 
@@ -54,12 +56,15 @@ const translations = {
     contact_btn: "Contact Me",
 
     view_fullscreen: "FullScreen",
-    project_category_games: "Games Products",
-    project_title_godot: "Godot Engine (GDSCRIPT)",
-    project_category_mobile: "Mobile Products",
-    project_title_android: "Android Studio (Kotlin)",
-    project_category_web: "Web Product",
-    project_title_react: "React (JavaScript)",
+    project_category_games: "Games Projects",
+    project_title_godot: "Download CV",
+    games_cv_link: "./downloads/g-cv-en.pdf",
+    project_category_mobile: "Mobile Projects",
+    project_title_android: "Download CV",
+    mobile_cv_link: "./downloads/m-cv-en.pdf",
+    project_category_web: "Web Projects",
+    project_title_react: "Download CV",
+    web_cv_link: "./downloads/w-cv-en.pdf",
  
     contact_title: "Get In Touch",
     name_placeholder: "Full name",
@@ -77,9 +82,11 @@ const translations = {
     home: "Accueil",
     services: "Services",
     about: "À propos",
+    cv_link: "./downloads/cv-fr.pdf",
 
     welcome: "Donner vie aux visions numériques.",
     welcome_subline: "Créons quelque chose d'extraordinaire ensemble",
+    dwonload_cv: "Télécharger CV",
 
     mobile_development: "Développement Mobile",
     web_development: "Développement Web",
@@ -126,12 +133,15 @@ const translations = {
     contact_btn: "Contactez-moi",
 
     view_fullscreen: "Plein Écran",
-    project_category_games: "Produits Jeux",
-    project_title_godot: "Moteur Godot (GDSCRIPT)",
-    project_category_mobile: "Produits Mobiles",
-    project_title_android: "Android Studio (Kotlin)",
-    project_category_web: "Produit Web",
-    project_title_react: "React (JavaScript)",
+    project_category_games: "Projects Jeux",
+    project_title_godot: "Télécharger CV",
+    games_cv_link: "./downloads/g-cv-fr.pdf",
+    project_category_mobile: "Projects Mobiles",
+    project_title_android: "Télécharger CV",
+    mobile_cv_link: "./downloads/m-cv-fr.pdf",
+    project_category_web: "Projects Web",
+    project_title_react: "Télécharger CV",
+    web_cv_link: "./downloads/w-cv-fr.pdf",
     contact_title: "Contactez-moi",
     name_placeholder: "Nom complet",
     email_placeholder: "Adresse email",
@@ -148,9 +158,11 @@ const translations = {
     home: "الرئيسية",
     services: "خدمات",
     about: "معلومات عنا",
+    cv_link: "./downloads/cv-ar.pdf",
 
     welcome: "تحويل الرؤى الرقمية إلى واقع",
     welcome_subline: "لنبني شيئًا استثنائيًا معًا",
+    dwonload_cv:  "تحميل السيرة الذاتية",
 
     mobile_development: "تطوير تطبيقات الهواتف",
     web_development: "تطوير الويب",
@@ -198,11 +210,14 @@ const translations = {
     
     view_fullscreen: "ملء الشاشة",
     project_category_games: "منتجات الألعاب",
-    project_title_godot: "محرك جودوت (GDSCRIPT)",
+    project_title_godot: "تحميل السيرة الذاتية",
+    games_cv_link: "./downloads/g-cv-ar.pdf",
     project_category_mobile: "منتجات الموبايل",
-    project_title_android: "أندرويد ستوديو (Kotlin)",
-    project_category_web: "منتج ويب",
-    project_title_react: "رياكت (JavaScript)",
+    project_title_android: "تحميل السيرة الذاتية",
+    mobile_cv_link: "./downloads/m-cv-ar.pdf",
+    project_category_web: "منتجات ويب",
+    project_title_react: "تحميل السيرة الذاتية",
+    web_cv_link: "./downloads/w-cv-ar.pdf",
     contact_title: "تواصل معي",
     name_placeholder: "الاسم الكامل",
     email_placeholder: "البريد الإلكتروني",
@@ -218,9 +233,15 @@ const translations = {
 
 function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(element => {
-    const key = element.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key]) {
-      element.textContent = translations[lang][key];
+    const textKey = element.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][textKey]) {
+      element.textContent = translations[lang][textKey];
+    }
+  });
+  document.querySelectorAll('[data-i18n-link]').forEach(element => {
+    const linkKey = element.getAttribute('data-i18n-link');
+    if (translations[lang] && translations[lang][linkKey]) {
+      element.textContent = translations[lang][linkKey];
     }
   });
   
