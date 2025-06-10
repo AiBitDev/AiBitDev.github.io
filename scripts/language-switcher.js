@@ -55,7 +55,7 @@ const translations = {
     work_title: "Let's Work Together On Your Next Project!",
     contact_btn: "Email Me",
 
-    view_fullscreen: "FullScreen",
+    view_fullscreen: "View Image",
     project_category_games: "Games Projects",
     project_title_godot: "Download CV",
     games_cv_link: "./downloads/g-cv-en.pdf",
@@ -132,7 +132,7 @@ const translations = {
     work_title: "Travaillons Ensemble Sur Votre Prochain Projet !",
     contact_btn: "envoyez-moi un e-mail",
 
-    view_fullscreen: "Plein Écran",
+    view_fullscreen: "Voir l'image",
     project_category_games: "Projects Jeux",
     project_title_godot: "Télécharger CV",
     games_cv_link: "./downloads/g-cv-fr.pdf",
