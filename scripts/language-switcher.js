@@ -5,6 +5,8 @@ const translations = {
     home: "Home",
     services: "Services",
     about: "About",
+    projects: "Projects",
+    contact: "Contact",
     cv_link: "./downloads/cv-en.pdf",
 
     welcome: "Bringing digital visions to life.",
@@ -37,20 +39,20 @@ const translations = {
     backend_dev: "Backend Development",
     ui_ux: "UI/UX Design",
     //Interview Start
-    interview_q1: "- Who are you, and how did your career in tech begin?",
-    interview_a1: "- I’m a Mechatronics Engineer, Ad Indie and the founder of AIBITDEV. My journey started with a fascination for how hardware and software interact. Over time, that curiosity led me into game development, web platforms, and mobile apps where I found a true passion for building experiences people can actually use.",
+    interview_q1: "Who are you, and how did your career in tech begin?",
+    interview_a1: "I’m a Mechatronics Engineer, Ad Indie and the founder of AIBITDEV. My journey started with a fascination for how hardware and software interact. Over time, that curiosity led me into game development, web platforms, and mobile apps where I found a true passion for building experiences people can actually use.",
 
-    interview_q2: "- Why mechatronics? And how does it influence your software work today?",
-    interview_a2: "- Mechatronics gave me a systems-thinking mindset—understanding how machines, and code work together. That training helped me become a better software developer, because I approach every project holistically: from the user experience to the backend logic, and sometimes even the physical interaction.",
+    interview_q2: "Why mechatronics? And how does it influence your software work today?",
+    interview_a2: "Mechatronics gave me a systems-thinking mindset—understanding how machines, and code work together. That training helped me become a better software developer, because I approach every project holistically: from the user experience to the backend logic, and sometimes even the physical interaction.",
 
-    interview_q3: "- What inspired you to start AIBITDEV?",
-    interview_a3: "- I wanted to create a space where experimentation, creativity, and engineering meet. AIBITDEV started as a solo venture but quickly became my personal lab for building everything that is software related. It’s where vision becomes reality.",
+    interview_q3: "What inspired you to start AIBITDEV?",
+    interview_a3: "I wanted to create a space where experimentation, creativity, and engineering meet. AIBITDEV started as a solo venture but quickly became my personal lab for building everything that is software related. It’s where vision becomes reality.",
 
-    interview_q4: "- You cover mobile, web, game, and backend development—how do you manage that range?",
-    interview_a4: "- To me, they're different languages for solving problems. I don't believe in boxing myself into one category. I learn fast, iterate, and lean on strong fundamentals. It's all about understanding the user and choosing the right tools for the job.",
+    interview_q4: "You cover mobile, web, game, and backend development—how do you manage that range?",
+    interview_a4: "To me, they're different languages for solving problems. I don't believe in boxing myself into one category. I learn fast, iterate, and lean on strong fundamentals. It's all about understanding the user and choosing the right tools for the job.",
 
-    interview_q5: "- Last question—what advice would you give to someone starting in tech today?",
-    interview_a5: "- Start small, but start now. Build things, break things, and never stop asking why. The tech will change, but your ability to think critically and adapt is your real superpower.",
+    interview_q5: "Last question—what advice would you give to someone starting in tech today?",
+    interview_a5: "Start small, but start now. Build things, break things, and never stop asking why. The tech will change, but your ability to think critically and adapt is your real superpower.",
     //Interview End
     work_title: "Let's Work Together On Your Next Project!",
     contact_btn: "Email Me",
@@ -73,6 +75,8 @@ const translations = {
     message_placeholder: "Enter message",
     submit_btn: "Send Quote",
     contact_address: "Boumerdes, Algeria",
+    contact_form:"Fill Out Our Form",
+    form_description:"Have a project in mind? Fill out our quick form and we'll get back to you soon.",
     design_credits: "Credits: Design By @codewithsadee",
     copyright_text: "Copyright reserved by AIBITDEV 2025",
     back_to_top: "Back To Top"
@@ -82,6 +86,8 @@ const translations = {
     home: "Accueil",
     services: "Services",
     about: "À propos",
+    projects: "Projects",
+    contact: "Contact",
     cv_link: "./downloads/cv-fr.pdf",
 
     welcome: "Donner vie aux visions numériques.",
@@ -149,15 +155,20 @@ const translations = {
     message_placeholder: "Votre message",
     submit_btn: "Envoyer",
     contact_address: "Boumerdes, Algérie",
+    contact_form:"Remplissez notre formulaire",
+    form_description:"Vous avez un projet en tête ? Remplissez notre formulaire rapide et nous vous répondrons sous peu.",
     design_credits: "Crédits: Design par @codewithsadee",
     copyright_text: "Copyright réservé par AIBITDEV 2025",
     back_to_top: "Retour en haut"
   },
   ar: {
-    name: "Adimi Aimen Abderrahmane",
+    name: "عظيمي أيمن عبد الرحمان",
+    phone_number:"553781225(213+)",
     home: "الرئيسية",
     services: "خدمات",
-    about: "معلومات عنا",
+    about: "معلومات عني",
+    projects: "المشاريع",
+    contact: "تواصل", 
     cv_link: "./downloads/cv-ar.pdf",
 
     welcome: "تحويل الرؤى الرقمية إلى واقع",
@@ -179,8 +190,6 @@ const translations = {
     about_phone: "الهاتف",
     about_email: "البريد",
     about_social: "تواصل معي",
-    fb: "فيسبوك",
-    li: "لينكدإن",
     
     skills_title: "القدرات الرقمية",
     skills_description: "تتراوح أدواتي من التصميم إلى تطوير الأنظمة المتكاملة، حيث أمزج الميكاترونيكس بخبرة سنوات في البرمجة. كل مهارة تمثل حلاً مثبتًا، صقلته المشاريع الحقيقية وصممته لتحقيق التأثير.",
@@ -202,7 +211,7 @@ const translations = {
     interview_q4: "أنت تغطي تطوير الهواتف، الويب، الألعاب، والخوادم—كيف تدير هذا التنوع؟",
     interview_a4: "بالنسبة لي، هي لغات مختلفة لحل المشاكل. لا أؤمن بحصر نفسي في مجال واحد. أتعلم بسرعة، أكرر المحاولة، وأعتمد على أساسيات قوية. كل شيء يبدأ بفهم المستخدم واختيار الأدوات المناسبة.",
 
-    interview_q5: "سؤال أخير—ما نصيحتك لشخص يبدأ الآن في مجال التقنية؟",
+    interview_q5: "سؤال أخير ما نصيحتك لشخص يبدأ الآن في مجال التقنية؟",
     interview_a5: "ابدأ صغيرًا، لكن ابدأ الآن. ابنِ أشياء، اخطئ، ولا تتوقف عن طرح السؤال لماذا. التقنية ستتغير، لكن قدرتك على التفكير النقدي والتأقلم هي قوتك الحقيقية.",
     //Interview End
     work_title: "لنعمل معًا على مشروعك القادم!",
@@ -225,6 +234,8 @@ const translations = {
     message_placeholder: "اكتب رسالتك",
     submit_btn: "إرسال",
     contact_address: "بومرداس، الجزائر",
+    contact_form:"املأ استمارتنا",
+    form_description:"هل لديك مشروع في ذهنك؟ املأ استمارتنا السريعة وسنعاود الاتصال بك قريبًا",
     design_credits: "الاعتمادات: تصميم @codewithsadee",
     copyright_text: "جميع الحقوق محفوظة لـ AIBITDEV 2025",
     back_to_top: "العودة للأعلى"

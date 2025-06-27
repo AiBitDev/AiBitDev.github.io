@@ -914,8 +914,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .cta .btn {
-  margin-inline: auto;
-  margin-block-start: 30px;
+  display: none;
 }
 
 
@@ -996,12 +995,43 @@ body.nav-active { overflow: hidden; }
 
 .contact .section-title {
   font-size: var(--fontSize-1);
-  margin-block-end: 25px;
 }
 
 .contact-content {
+  width: 100%;
   display: grid;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 40px;
+  align-items: start;
+}
+
+.form-column {
+  margin-inline: auto;
+  margin: 0 auto;
+  margin-block-end: 30px;
+}
+
+.form-btn {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.form-description {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-light-gray);
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack items vertically within their column */
+  gap: 20px;
 }
 
 .contact-form .input-field {
@@ -1027,20 +1057,18 @@ textarea.input-field {
 
 .contact .map {
   width: 100%;
-  filter: grayscale(1);
+  min-height: 400px;
 }
 
 .contact-item {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
   gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-eerie-black);
 }
 
 .contact-item:not(:last-child) {
-  padding-block-end: 30px;
-  border-block-end: 1px solid var(--border-eerie-black);
-  margin-block-end: 30px;
+  margin-block-end: 0;
 }
 
 .contact-item .title { color: var(--text-light-gray); }
@@ -1396,6 +1424,19 @@ textarea.input-field {
     grid-template-columns: 1fr !important;
     text-align: center;
   }
+
+  .contact-content {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+
+  .cta .btn {
+    display: flex;
+    margin-inline: auto;
+    margin-block-start: 30px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
 }
 
 
@@ -1516,11 +1557,6 @@ textarea.input-field {
   .cta .section-title {
     text-align: left;
     gap: 30px;
-  }
-
-  .cta .btn {
-    flex-shrink: 0;
-    margin: 0;
   }
 
 
