@@ -89,21 +89,9 @@
 
 }
 
-/* Root level fixes */
 html, body {
-  width: 100vw;
-  overflow-x: hidden;
-  position: relative;
-}
-
-body {
-  min-height: 100vh;
-}
-
-/* Contain all sections */
-header, main, footer, section, .hero {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Ensures all containers don't exceed viewport width */
@@ -554,6 +542,7 @@ body.nav-active { overflow: hidden; }
   z-index: 1;
 }
 
+/* Your Hover Effect - Fixed Version */
 .nav-close-btn\:hover::before {
   content: "";
   position: absolute;
@@ -580,6 +569,7 @@ body.nav-active { overflow: hidden; }
   transition: transform var(--transition-1), opacity var(--transition-1);
 }
 
+/* Hover States */
 .nav-close-btn\:hover:hover::before {
   transform: scale(0.5);
   opacity: 0;
@@ -590,6 +580,7 @@ body.nav-active { overflow: hidden; }
   opacity: 1;
 }
 
+/* Icon Styles */
 .nav-close-btn ion-icon {
   color: var(--text-white);
   font-size: 2.4rem;
@@ -690,15 +681,18 @@ body.nav-active { overflow: hidden; }
 }
 
 .hero .shape {
-  max-width: 100vw;
+  position: absolute;
+  max-width: 100%;
+  z-index: -1;
 }
 
 .hero .shape-1 {
-  left: min(120px, 10vw);
+  top: -60px;
+  left: 120px;
 }
 
 .hero .shape-2 {
-  width: 100vw;
+  top: 180px;
   left: 0;
 }
 
@@ -1332,7 +1326,7 @@ textarea.input-field {
 
 }
 
-/* for all small screens */
+/* Mobile language switcher positioning */
 @media (max-width: 991px) {
   .navbar {
     width: 100vw;
@@ -1354,43 +1348,6 @@ textarea.input-field {
     left: 0;
     right: auto;
     min-width: 120px;
-  }
-  .service-card {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .service-card .card-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-  
-  .service-card.active .card-title {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  .service-card.active .card-icon {
-    opacity: 0;
-  }
-  
-  .service-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    text-align: center;
   }
 }
 
