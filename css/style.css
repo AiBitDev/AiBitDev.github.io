@@ -1434,7 +1434,6 @@ textarea.input-field {
     margin-inline: auto;
     margin-block-start: 30px;
     flex-shrink: 0;
-    margin: 0;
   }
 
 }
