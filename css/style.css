@@ -89,9 +89,21 @@
 
 }
 
+/* Root level fixes */
 html, body {
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Contain all sections */
+header, main, footer, section, .hero {
   width: 100%;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow: hidden;
 }
 
 /* Ensures all containers don't exceed viewport width */
@@ -678,18 +690,15 @@ body.nav-active { overflow: hidden; }
 }
 
 .hero .shape {
-  position: absolute;
-  max-width: 100%;
-  z-index: -1;
+  max-width: 100vw;
 }
 
 .hero .shape-1 {
-  top: -60px;
-  left: 120px;
+  left: min(120px, 10vw);
 }
 
 .hero .shape-2 {
-  top: 180px;
+  width: 100vw;
   left: 0;
 }
 
@@ -1325,9 +1334,19 @@ textarea.input-field {
 
 /* for all small screens */
 @media (max-width: 991px) {
+  .navbar {
+    width: 100vw;
+    left: -100vw;
+    max-width: 100vw;
+  }
+  
+  .navbar.active {
+    transform: translateX(100vw);
+  }
+  
   .header .container {
-    justify-content: space-between;
-    padding-inline: 16px; /* Ensure proper spacing */
+    padding-inline: 16px;
+    max-width: 100vw;
   }
   
   /* Make dropdown menu visible on mobile */
