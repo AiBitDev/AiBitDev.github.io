@@ -62,28 +62,15 @@
   <header class="header" data-header>
     <div class="container">
 
-      <div class="language-switcher btn btn:hover">
-        <button class="dropdown-toggle" aria-expanded="false">
-          <span class="current-lang">EN</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </button>
-        
-        <ul class="dropdown-menu">
-          <li><button class="lang-btn" data-lang="en">English</button></li>
-          <li><button class="lang-btn" data-lang="fr">Français</button></li>
-          <li><button class="lang-btn" data-lang="ar">العربية</button></li>
-        </ul>
-      </div>
-
       <nav class="navbar" data-navbar>
-<!--
+
         <div class="navbar-top">
 
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
         </div>
--->
+
         <ul class="navbar-list">
 
           <li>
@@ -120,6 +107,19 @@
         <span class="line line-1"></span>
         <span class="line line-2"></span>
       </button>
+
+      <div class="language-switcher btn btn:hover">
+        <ul class="dropdown-menu">
+          <li><button class="lang-btn" data-lang="en">English</button></li>
+          <li><button class="lang-btn" data-lang="fr">Français</button></li>
+          <li><button class="lang-btn" data-lang="ar">العربية</button></li>
+        </ul>
+        
+        <button class="dropdown-toggle" aria-expanded="false">
+          <span class="current-lang">EN</span>
+          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
+        </button>
+      </div>
 
       <div class="overlay" data-overlay data-nav-toggler></div>
 
@@ -187,7 +187,7 @@
           <ul class="service-list">
 
             <li class="service-item">
-              <div class="service-card">
+              <div class="service-card" data-service-card>
 
                 <div class="card-icon">
                   <img src="./images/ic-mob.svg" width="80" height="80" loading="lazy"
@@ -195,7 +195,7 @@
                 </div>
 
                 <h3 class="card-title">
-                  <a href="#project" data-i18n="mobile_development">
+                  <a href="#project" class="service_link" data-i18n="mobile_development">
                     Mobile <br>
                     Development
                   </a>
@@ -205,7 +205,7 @@
             </li>
 
             <li class="service-item">
-              <div class="service-card">
+              <div class="service-card" data-service-card>
 
                 <div class="card-icon">
                   <img src="./images/ic-fe.svg" width="80" height="80" loading="lazy"
@@ -213,7 +213,7 @@
                 </div>
 
                 <h3 class="card-title">
-                  <a href="#project" data-i18n="web_development">
+                  <a href="#project" class="service_link" data-i18n="web_development">
                     Web <br>
                     Development
                   </a>
@@ -223,7 +223,7 @@
             </li>
 
             <li class="service-item">
-              <div class="service-card">
+              <div class="service-card" data-service-card>
 
                 <div class="card-icon">
                   <img src="./images/ic-game.svg" width="80" height="80" loading="lazy"
@@ -231,7 +231,7 @@
                 </div>
 
                 <h3 class="card-title">
-                  <a href="#project" data-i18n="game_development">
+                  <a href="#project" class="service_link" data-i18n="game_development">
                     Game <br>
                     Development
                   </a>
@@ -316,14 +316,6 @@
                       <p class="list-title" data-i18n="about_email">Email Address</p>
                       <span class="span title h5">aimen1adimi@gmail.com</span>
                     </li>
-
-                    <li class="about-item">
-                      <p class="list-title" data-i18n="about_social">Social Network</p>
-                      <div class="social-list">
-                        <a href="https://facebook.com" target="_blank" class="social-link h6" title="Facebook" data-i18n="fb">FB</a>
-                        <a href="https://Linkedin.com" target="_blank" class="social-link h6" title="Linkedin" data-i18n="li">LN</a>
-                      </div>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -376,10 +368,10 @@
                         <li>
                           <div class="skill-wrapper">
                             <span class="span" data-i18n="backend_dev">Backend Development</span>
-                            <span class="value">65%</span>
+                            <span class="value">75%</span>
                           </div>
                           <div class="progress-bar">
-                            <div class="progress-fill" style="width: 65%"></div>
+                            <div class="progress-fill" style="width: 75%"></div>
                           </div>
                         </li>
 
@@ -410,29 +402,54 @@
 
                 <div class="interview-script">
 
-                  <div class="interview-block">
-                    <h4 data-i18n="interview_q1">- Who are you, and how did your career in tech begin?</h4>
-                    <p data-i18n="interview_a1">- I’m a Mechatronics Engineer, Ad Indie and the founder of AIBITDEV. My journey started with a fascination for how hardware and software interact. Over time, that curiosity led me into game development, web platforms, and mobile apps where I found a true passion for building experiences people can actually use.</p>
+                  <div class="accordion-item">
+                    <button class="accordion-question" aria-expanded="false">
+                      <h4 data-i18n="interview_q1">- Who are you, and how did your career in tech begin?</h4>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-answer">
+                      <p data-i18n="interview_a1">- I’m a Mechatronics Engineer, Ad Indie and the founder of AIBITDEV. My journey started with a fascination for how hardware and software interact. Over time, that curiosity led me into game development, web platforms, and mobile apps where I found a true passion for building experiences people can actually use.</p>
+                    </div>
                   </div>
 
-                  <div class="interview-block">
-                    <h4 data-i18n="interview_q2">- Why mechatronics? And how does it influence your software work today?</h4>
-                    <p data-i18n="interview_a2">- Mechatronics gave me a systems-thinking mindset—understanding how machines, and code work together. That training helped me become a better software developer, because I approach every project holistically: from the user experience to the backend logic, and sometimes even the physical interaction.</p>
+                  <div class="accordion-item">
+                    <button class="accordion-question" aria-expanded="false">
+                      <h4 data-i18n="interview_q2">- Why mechatronics? And how does it influence your software work today?</h4>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-answer">
+                      <p data-i18n="interview_a2">- Mechatronics gave me a systems-thinking mindset—understanding how machines, and code work together. That training helped me become a better software developer, because I approach every project holistically: from the user experience to the backend logic, and sometimes even the physical interaction.</p>
+                    </div>
                   </div>
 
-                  <div class="interview-block">
-                    <h4 data-i18n="interview_q3">- What inspired you to start AIBITDEV?</h4>
-                    <p data-i18n="interview_a3">- I wanted to create a space where experimentation, creativity, and engineering meet. AIBITDEV started as a solo venture but quickly became my personal lab for building everything that is software related. It’s where vision becomes reality.</p>
+                  <div class="accordion-item">
+                    <button class="accordion-question" aria-expanded="false">
+                      <h4 data-i18n="interview_q3">- What inspired you to start AIBITDEV?</h4>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-answer">
+                      <p data-i18n="interview_a3">- I wanted to create a space where experimentation, creativity, and engineering meet. AIBITDEV started as a solo venture but quickly became my personal lab for building everything that is software related. It’s where vision becomes reality.</p>
+                    </div>
                   </div>
 
-                  <div class="interview-block">
-                    <h4 data-i18n="interview_q4">- You cover mobile, web, game, and backend development—how do you manage that range?</h4>
-                    <p data-i18n="interview_a4">- To me, they're different languages for solving problems. I don't believe in boxing myself into one category. I learn fast, iterate, and lean on strong fundamentals. It's all about understanding the user and choosing the right tools for the job.</p>
+                  <div class="accordion-item">
+                    <button class="accordion-question" aria-expanded="false">
+                      <h4 data-i18n="interview_q4">- You cover mobile, web, game, and backend development—how do you manage that range?</h4>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-answer">
+                      <p data-i18n="interview_a4">- To me, they're different languages for solving problems. I don't believe in boxing myself into one category. I learn fast, iterate, and lean on strong fundamentals. It's all about understanding the user and choosing the right tools for the job.</p>
+                    </div>
                   </div>
 
-                  <div class="interview-block">
-                    <h4 data-i18n="interview_q5">- Last question—what advice would you give to someone starting in tech today?</h4>
-                    <p data-i18n="interview_a5">- Start small, but start now. Build things, break things, and never stop asking *why*. The tech will change, but your ability to think critically and adapt is your real superpower.</p>
+                  <div class="accordion-item">
+                    <button class="accordion-question" aria-expanded="false">
+                      <h4 data-i18n="interview_q5">- Last question—what advice would you give to someone starting in tech today?</h4>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-answer">
+                      <p data-i18n="interview_a5">- Start small, but start now. Build things, break things, and never stop asking *why*. The tech will change, but your ability to think critically and adapt is your real superpower.</p>
+                    </div>
                   </div>
 
                 </div>
@@ -537,11 +554,6 @@
           <h2 class="title h2 section-title" data-i18n="contact_title">Get In Touch</h2>
 
           <div class="contact-content">
-
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.479641850507!2d3.4705712745816175!3d36.75905947001969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e69007ef60757%3A0x1ea6de6d8861bb19!2sBoumerdes%20ville!5e0!3m2!1sfr!2sdz!4v1749340038328!5m2!1sfr!2sdz"
-              width="100%" height="600" style="border: 0;" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 
             <ul class="contact-list">
 

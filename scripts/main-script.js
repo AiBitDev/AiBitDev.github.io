@@ -120,7 +120,72 @@ const filterContent = function () {
 
 addEventOnElements(tabBtns, "click", filterContent);
 
+/**Service Cards */
 
+document.querySelectorAll('[data-service-card]').forEach(card => {
+  let clickTimer = null;
+  
+  card.addEventListener('click', function(e) {
+    // Check if we're on mobile
+    if (window.innerWidth > 991) return;
+    
+    // If card is already active, allow default link behavior
+    if (this.classList.contains('active')) {
+      if (e.target.closest('.service-link')) return;
+      this.classList.remove('active');
+      return;
+    }
+    
+    // Clear any pending timers
+    if (clickTimer) clearTimeout(clickTimer);
+    
+    // Prevent default on first click
+    e.preventDefault();
+    
+    // Close any other open cards
+    document.querySelectorAll('[data-service-card].active').forEach(activeCard => {
+      if (activeCard !== this) activeCard.classList.remove('active');
+    });
+    
+    // Open this card
+    this.classList.add('active');
+    
+    // Set timer to auto-close after delay
+    clickTimer = setTimeout(() => {
+      this.classList.remove('active');
+    }, 3000);
+  });
+  
+  // Close when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!card.contains(e.target) && card.classList.contains('active')) {
+      card.classList.remove('active');
+    }
+  });
+});
+
+/**
+ * Interview
+ */
+
+document.querySelectorAll('.accordion-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentNode;
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    
+    // Close all others
+    document.querySelectorAll('.accordion-item').forEach(el => {
+      el.classList.remove('active');
+      el.querySelector('.accordion-question').setAttribute('aria-expanded', 'false');
+    });
+    
+    // Open clicked one if wasn't open
+    if (!isOpen) {
+      item.classList.add('active');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
 
 /**
  * Custom cursor

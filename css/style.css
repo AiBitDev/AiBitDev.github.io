@@ -91,15 +91,15 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-/* Ensure all containers don't exceed viewport width */
+/* Ensures all containers don't exceed viewport width */
 .container {
   max-width: 100%;
 }
 
-/* Add this to prevent any element from causing overflow */
+/* To prevent any element from causing overflow */
 img, svg, video, canvas {
   max-width: 100%;
 }
@@ -364,8 +364,8 @@ body.nav-active { overflow: hidden; }
 \*-----------------------------------*/
 
 .language-switcher {
-  position: relative; /* Add this */
-  display: inline-flex; /* Change from default to inline-flex */
+  position: relative;
+  display: flex !important;
   align-items: center;
   gap: 8px; /* Space between text and icon */
   padding: 8px 16px; /* Make whole area clickable */
@@ -391,6 +391,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .dropdown-menu {
+  background-color: var(--bg-black);
   color: var(--text-white);
   position: absolute;
   top: 100%;
@@ -472,6 +473,7 @@ body.nav-active { overflow: hidden; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .nav-open-btn {
@@ -526,17 +528,66 @@ body.nav-active { overflow: hidden; }
   margin-block-end: 10px;
 }
 
+/* Close Button Base Styles */
 .nav-close-btn {
-  width: 30px;
-  height: 30px;
-  background-color: var(--bg-smoky-black);
-  color: var(--text-white);
-  font-size: 2rem;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.nav-close-btn ion-icon { --ionicon-stroke-width: 50px; }
+.nav-close-btn\:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-smoky-black);
+  z-index: -1;
+  transition: transform var(--transition-1), opacity var(--transition-1);
+}
+
+.nav-close-btn\:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--border-white);
+  transform: scale(1.2);
+  opacity: 0;
+  z-index: -1;
+  transition: transform var(--transition-1), opacity var(--transition-1);
+}
+
+.nav-close-btn\:hover:hover::before {
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+.nav-close-btn\:hover:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.nav-close-btn ion-icon {
+  color: var(--text-white);
+  font-size: 2.4rem;
+  --ionicon-stroke-width: 50px;
+  transition: transform var(--transition-1);
+}
+
+.nav-close-btn:hover ion-icon {
+  transform: scale(1.1);
+}
 
 .navbar-link {
   padding: 8px;
@@ -764,6 +815,51 @@ body.nav-active { overflow: hidden; }
 .progress-fill {
   background-color: var(--bg-white);
   height: 100%;
+}
+
+/* Accordion styles */
+.accordion-item {
+  border-bottom: 1px solid var(--border-eerie-black);
+}
+
+.accordion-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  background: none;
+  border: none;
+  color: var(--text-white);
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordion-question h4 {
+  margin: 0;
+  flex: 1;
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  margin-left: 15px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 15px;
+}
+
+.accordion-item.active .accordion-answer {
+  max-height: 500px; /* Adjust based on your content */
+  padding-bottom: 15px;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
 }
 
 /*-----------------------------------*\
@@ -1227,8 +1323,57 @@ textarea.input-field {
 
 }
 
-
-
+/* for all small screens */
+@media (max-width: 991px) {
+  .header .container {
+    justify-content: space-between;
+    padding-inline: 16px; /* Ensure proper spacing */
+  }
+  
+  /* Make dropdown menu visible on mobile */
+  .dropdown-menu {
+    left: 0;
+    right: auto;
+    min-width: 120px;
+  }
+  .service-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service-card .card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .service-card.active .card-title {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .service-card.active .card-icon {
+    opacity: 0;
+  }
+  
+  .service-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+}
 
 
 /**
