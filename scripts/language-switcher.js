@@ -40,7 +40,7 @@ const translations = {
     ui_ux: "UI/UX Design",
     //Interview Start
     interview_q1: "Who are you, and how did your career in tech begin?",
-    interview_a1: "I’m a Mechatronics Engineer, Ad Indie and the founder of AIBITDEV. My journey started with a fascination for how hardware and software interact. Over time, that curiosity led me into game development, web platforms, and mobile apps where I found a true passion for building experiences people can actually use.",
+    interview_a1: "I’m a Mechatronics Engineer, And Indie developer and the founder of AIBITDEV. My journey started with a fascination for how hardware and software interact. Over time, that curiosity led me into game development, web platforms, and mobile apps where I found a true passion for building experiences people can actually use.",
 
     interview_q2: "Why mechatronics? And how does it influence your software work today?",
     interview_a2: "Mechatronics gave me a systems-thinking mindset—understanding how machines, and code work together. That training helped me become a better software developer, because I approach every project holistically: from the user experience to the backend logic, and sometimes even the physical interaction.",
