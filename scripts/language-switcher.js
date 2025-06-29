@@ -1,7 +1,7 @@
 // Translation dictionary
 const translations = {
   en: {
-    name: "Adimi Aimen",
+    name: "Adimi Aimen Abderrahmane",
     home: "Home",
     services: "Services",
     about: "About",
