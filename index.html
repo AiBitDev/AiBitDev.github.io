@@ -1,648 +1,1178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 
-    - primary meta tags
-  -->
-  <title>AIBITDEV - Bring Your Ideas To Life.</title>
-  <meta name="title" content="AIBITDEV - Bring Your Ideas To Life.">
-  <meta name="description" content="portfolio and contact information">
-
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./images/img-logo.png" type="image/svg+xml">
-
-  <!-- 
-    - google font link
-  -->
+  <title>AIBITDEV — We moved</title>
+  <meta name="description" content="We moved to aibitdev.com. Email aibitdevdz@gmail.com or call +213 553 781 225.">
+  <meta name="theme-color" content="#ffe7b0">
+  <link rel="icon" href="./images/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #2a1b10;
+      --cream: #fff8ec;
+      --gold: #e7a322;
+    }
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./css/style.css">
+    * { box-sizing: border-box; }
 
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="./images/img-logo.png">
-  <link rel="preload" as="image" href="./images/hero-shape-1.png">
-  <link rel="preload" as="image" href="./images/hero-shape-2.png">
-  <link rel="preload" as="image" href="./images/project-1.jpg">
-  <link rel="preload" as="image" href="./images/project-2.jpg">
-  <link rel="preload" as="image" href="./images/project-3.jpg">
-  <link rel="preload" as="image" href="./images/img-about.png">
-  <link rel="preload" as="image" href="./images/img-interview.png">
-  <link rel="preload" as="image" href="./images/img-skills.png">
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #ffe3a6;
+      color: var(--ink);
+    }
 
+    body {
+      min-height: 100dvh;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      font-weight: 500;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+
+    body.holding, body.holding * { cursor: grabbing !important; }
+
+    .stage {
+      position: relative;
+      direction: ltr;
+      height: 100dvh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse 62% 70% at 32% 50%, rgba(255, 250, 242, 0.94) 0%, rgba(255, 246, 226, 0.55) 46%, transparent 72%),
+        linear-gradient(155deg, #fff8ea 0%, #ffe7b3 42%, #f6c453 100%);
+    }
+
+    .half {
+      display: none;
+    }
+
+    main {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: min(22rem, calc(100% - 2rem));
+    }
+
+    .logo {
+      display: block;
+      width: min(168px, 38vw);
+      aspect-ratio: 1;
+      margin-bottom: 0.85rem;
+      background-color: var(--ink);
+      -webkit-mask: url("./images/logo.png") center / contain no-repeat;
+      mask: url("./images/logo.png") center / contain no-repeat;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.6rem, 8vw, 3.6rem);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+
+    .lede {
+      margin: 0.7rem 0 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+      letter-spacing: 0;
+      line-height: 1.3;
+      color: #4a321c;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .lede.swap {
+      opacity: 0;
+      transform: translateY(0.35rem);
+    }
+
+    html[dir="rtl"] main,
+    html[dir="rtl"] .slogan { direction: rtl; }
+    html[dir="rtl"] .lede,
+    html[dir="rtl"] body {
+      font-family: "IBM Plex Sans Arabic", "Manrope", sans-serif;
+    }
+
+    .go {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-top: 1.35rem;
+      padding: 0.82rem 1.25rem 0.82rem 1.35rem;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 10px 24px rgba(70, 36, 8, 0.16);
+    }
+
+    .go svg { width: 16px; height: 16px; transition: transform 0.3s ease; }
+    .go:hover { background: #3d2918; }
+    .go:hover svg { transform: translateX(3px); }
+
+    html[dir="rtl"] .go,
+    html[dir="rtl"] .go span,
+    html[dir="rtl"] .contacts,
+    html[dir="rtl"] .contacts a {
+      direction: ltr;
+      unicode-bidi: isolate;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      margin-top: 1rem;
+    }
+
+    .contacts a {
+      color: #3f2b18;
+      text-decoration: none;
+      font-size: 1.02rem;
+      border-bottom: 1px solid transparent;
+      user-select: text;
+    }
+
+    .contacts a:hover { border-bottom-color: #3f2b18; }
+
+    .go:focus-visible,
+    .contacts a:focus-visible,
+    .butterfly:focus-visible,
+    .lang-mark:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 4px;
+    }
+
+    .lang {
+      --spin: 0deg;
+      --orbit: 30px;
+      position: relative;
+      direction: ltr;
+      width: 92px;
+      height: 92px;
+      margin-top: 1.15rem;
+      flex: none;
+    }
+
+    .lang-disc {
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(42, 27, 16, 0.32);
+      box-shadow: inset 0 0 0 7px rgba(42, 27, 16, 0.04);
+      transform: rotate(var(--spin));
+      transition: transform 0.72s cubic-bezier(0.16, 1.45, 0.32, 1);
+      pointer-events: none;
+    }
+
+    .lang-disc::before,
+    .lang-disc::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 4px;
+      width: 3px;
+      height: 3px;
+      margin-left: -1.5px;
+      border-radius: 50%;
+      background: rgba(42, 27, 16, 0.45);
+    }
+
+    .lang-disc::after {
+      top: auto;
+      bottom: 11px;
+      left: 8px;
+    }
+
+    .lang-arm {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      transform: rotate(calc(var(--i) * 120deg + var(--spin)));
+      transition: transform 0.72s cubic-bezier(0.16, 1.45, 0.32, 1);
+    }
+
+    .lang-mark {
+      position: absolute;
+      left: 50%;
+      top: 6px;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      font-weight: 800;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      opacity: 0.4;
+      cursor: pointer;
+      pointer-events: auto;
+      transform: translateX(-50%) rotate(calc(var(--i) * -120deg - var(--spin))) scale(1);
+      transition: transform 0.72s cubic-bezier(0.16, 1.45, 0.32, 1), opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .lang-mark[data-lang="ar"] {
+      font-family: "IBM Plex Sans Arabic", "Manrope", sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0;
+    }
+
+    .lang-mark[aria-checked="true"] {
+      opacity: 1;
+      background: var(--ink);
+      color: var(--cream);
+      transform: translateX(-50%) rotate(calc(var(--i) * -120deg - var(--spin))) scale(1.06);
+    }
+
+    .lang-mark:hover { opacity: 0.85; }
+
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .cord {
+      position: absolute;
+      z-index: 6;
+      top: 0;
+      right: max(0.7rem, env(safe-area-inset-right));
+      width: 44px;
+      height: 22vh;
+      min-height: 112px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      touch-action: none;
+    }
+
+    .cord-hang {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      transform-origin: top center;
+      transition: transform 0.55s cubic-bezier(0.16, 1.55, 0.32, 1);
+    }
+
+    .cord-cap {
+      width: 14px;
+      height: 8px;
+      border-radius: 0 0 4px 4px;
+      background: #6d5644;
+    }
+
+    .cord-string {
+      width: 2px;
+      flex: 1;
+      background: linear-gradient(#8a6d56, #3e2c20);
+    }
+
+    .cord-bead {
+      width: 18px;
+      height: 24px;
+      margin-top: -1px;
+      border-radius: 9px 9px 11px 11px;
+      background: radial-gradient(circle at 35% 28%, #fff8f0, #d9c4ae 42%, #8b6b52);
+      box-shadow: inset 0 -4px 0 rgba(60, 32, 12, 0.18), 0 8px 10px rgba(60, 30, 8, 0.16);
+    }
+
+    .cord.pull .cord-hang {
+      transform: scaleY(1.38);
+      transition-duration: 0.12s;
+      transition-timing-function: ease-out;
+    }
+
+    .cord:focus-visible .cord-bead {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    .butterfly {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 3;
+      --fw: 144px;
+      --fh: 81px;
+      width: var(--fw);
+      height: var(--fh);
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: grab;
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .butterfly.caught { cursor: grabbing; }
+
+    .turn, .sprite {
+      display: block;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .slogan {
+      position: absolute;
+      z-index: 2;
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: max(1rem, env(safe-area-inset-bottom));
+      margin: 0;
+      text-align: center;
+      font-weight: 500;
+      font-size: clamp(1.05rem, 4.4vw, 1.4rem);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: var(--ink);
+      pointer-events: none;
+    }
+
+    .sprite {
+      background-color: var(--ink);
+      -webkit-mask: url("./images/butterfly.png") 0 0 / calc(var(--fw) * 4) calc(var(--fh) * 6) no-repeat;
+      mask: url("./images/butterfly.png") 0 0 / calc(var(--fw) * 4) calc(var(--fh) * 6) no-repeat;
+      filter: drop-shadow(0 6px 4px rgba(90, 46, 8, 0.16));
+    }
+
+    body.night {
+      --ink: #f6eeff;
+      --cream: #160d24;
+      background: #120a1c;
+      color: var(--ink);
+    }
+
+    body.night .stage {
+      background: linear-gradient(155deg, #1a1030 0%, #2c1650 52%, #4a2080 100%);
+    }
+
+    body.night .half { background: #140c22; }
+    body.night .lede { color: #d8c6f2; }
+    body.night .contacts a { color: #f4ecff; }
+    body.night .contacts a:hover { border-bottom-color: #f4ecff; }
+    body.night .go { background: #f4ecff; color: #1a1028; }
+    body.night .go:hover { background: #fff; }
+    body.night .cord-cap { background: #cbb6e4; }
+    body.night .cord-string { background: linear-gradient(#efe4ff, #b89adf); }
+    body.night .cord-bead {
+      background: radial-gradient(circle at 35% 28%, #fff, #e6d4fb 42%, #8d6cb8);
+      box-shadow: inset 0 -4px 0 rgba(30, 10, 50, 0.2), 0 8px 10px rgba(10, 0, 20, 0.28);
+    }
+    body.night .lang-disc {
+      border-color: rgba(246, 238, 255, 0.4);
+      box-shadow: inset 0 0 0 7px rgba(246, 238, 255, 0.05);
+    }
+    body.night .lang-disc::before,
+    body.night .lang-disc::after { background: rgba(246, 238, 255, 0.55); }
+
+    @media (max-width: 700px) {
+      .butterfly { --fw: 84px; --fh: 47.25px; }
+    }
+
+    @media (min-width: 900px) {
+      .half {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background: #fffaf3;
+      }
+
+      .stage { justify-content: flex-start; }
+
+      .cord {
+        right: auto;
+        left: 50%;
+        height: 46vh;
+        min-height: 180px;
+        transform: translateX(-50%);
+      }
+
+      main {
+        align-items: flex-start;
+        text-align: start;
+        width: 50%;
+        height: 100%;
+        justify-content: center;
+        margin: 0;
+        padding: 2rem 6vw;
+      }
+
+      .contacts { align-items: flex-start; }
+
+      html[dir="rtl"] main { align-items: flex-end; }
+
+      .slogan {
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        top: 50%;
+        width: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        font-size: clamp(2.5rem, 4.8vw, 4.4rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        padding: 0 8vw;
+      }
+
+      .logo { width: min(220px, 24vh); }
+
+      h1 { font-size: clamp(3rem, 4.2vw, 4.6rem); }
+    }
+
+    @media (max-height: 640px) {
+      .logo { width: min(120px, 28vh); margin-bottom: 0.4rem; }
+      h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
+      .lede { margin-top: 0.35rem; font-size: 1.05rem; }
+      .go { margin-top: 0.75rem; padding: 0.62rem 1rem; }
+      .contacts { margin-top: 0.55rem; }
+      .lang { width: 72px; height: 72px; margin-top: 0.45rem; }
+      .lang-mark { top: 4px; width: 26px; height: 26px; font-size: 0.6rem; }
+      .lang-mark[data-lang="ar"] { font-size: 0.82rem; }
+      .slogan { font-size: 0.95rem; }
+    }
+
+    @media (max-height: 640px) and (min-width: 900px) {
+      .slogan { font-size: clamp(1.7rem, 3.2vw, 2.6rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .go svg, .cord-hang, .lang-disc, .lang-arm, .lang-mark, .lede { animation: none; transition: none; }
+    }
+  </style>
 </head>
+<body>
+  <div class="stage" id="stage">
+    <div class="half" aria-hidden="true"></div>
+    <button class="cord" id="mode" type="button" aria-pressed="false" aria-label="Switch to night">
+      <span class="cord-hang">
+        <span class="cord-cap" aria-hidden="true"></span>
+        <span class="cord-string" aria-hidden="true"></span>
+        <span class="cord-bead" aria-hidden="true"></span>
+      </span>
+    </button>
 
-<body id="top">
+    <button class="butterfly" type="button" aria-pressed="false" aria-label="Butterfly. Press and hold to catch it, then release to let it fly.">
+      <span class="turn"><span class="sprite"></span></span>
+    </button>
+    <button class="butterfly" type="button" aria-pressed="false" aria-label="Butterfly. Press and hold to catch it, then release to let it fly.">
+      <span class="turn"><span class="sprite"></span></span>
+    </button>
+    <button class="butterfly" type="button" aria-pressed="false" aria-label="Butterfly. Press and hold to catch it, then release to let it fly.">
+      <span class="turn"><span class="sprite"></span></span>
+    </button>
+    <button class="butterfly" type="button" aria-pressed="false" aria-label="Butterfly. Press and hold to catch it, then release to let it fly.">
+      <span class="turn"><span class="sprite"></span></span>
+    </button>
+    <p class="slogan" id="slogan">Bringing digital ideas to life.</p>
 
-  <!-- 
-    - #PRELOADER
-  -->
-
-  <div class="preloader" data-preloader>
-    <span class="line"></span>
+    <main>
+      <span class="logo" role="img" aria-label="AIBITDEV"></span>
+      <h1>AIBITDEV</h1>
+      <p class="lede">We moved.</p>
+      <a class="go" href="https://aibitdev.com" dir="ltr" lang="en">
+        <span>aibitdev.com</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="contacts">
+        <a href="mailto:aibitdevdz@gmail.com" dir="ltr">aibitdevdz@gmail.com</a>
+        <a href="tel:+213553781225" dir="ltr">+213 553 781 225</a>
+      </div>
+      <div class="lang" id="lang" role="radiogroup" aria-label="Language">
+        <span class="lang-disc" aria-hidden="true"></span>
+        <span class="lang-arm" style="--i:0"><button class="lang-mark" type="button" role="radio" data-lang="en" aria-checked="true" aria-label="English">EN</button></span>
+        <span class="lang-arm" style="--i:1"><button class="lang-mark" type="button" role="radio" data-lang="fr" aria-checked="false" aria-label="Français">FR</button></span>
+        <span class="lang-arm" style="--i:2"><button class="lang-mark" type="button" role="radio" data-lang="ar" aria-checked="false" aria-label="العربية">ع</button></span>
+      </div>
+      <p class="sr" id="lang-live" aria-live="polite"></p>
+    </main>
   </div>
 
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <nav class="navbar" data-navbar>
-
-        <div class="navbar-top">
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link" data-nav-link data-i18n="home">Home</a>
-          </li>
-
-          <li>
-            <a href="#service" class="navbar-link" data-nav-link data-i18n="services">Services</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link data-i18n="about">About</a>
-          </li>
-
-          <li>
-            <a href="#project" class="navbar-link" data-nav-link data-i18n="projects">Projects</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link" data-nav-link data-i18n="contact">Contact</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <button class="nav-open-btn btn:hover" aria-label="open menu" data-nav-toggler>
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-      </button>
-
-      <div class="language-switcher btn btn:hover">
-        <ul class="dropdown-menu">
-          <li><button class="lang-btn" data-lang="en">English</button></li>
-          <li><button class="lang-btn" data-lang="fr">Français</button></li>
-          <li><button class="lang-btn" data-lang="ar">العربية</button></li>
-        </ul>
-        
-        <button class="dropdown-toggle" aria-expanded="false">
-          <span class="current-lang">EN</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </button>
-      </div>
-
-      <div class="overlay" data-overlay data-nav-toggler></div>
-
-    </div>
-  </header>
-
-
-
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <div class="hero text-center" id="home">
-        <div class="container">
-
-          <div class="banner-outline has-after">
-
-            <div class="hero-banner img-holder has-after" style="--width: 680; --height: 680;" data-tilt>
-              <img src="./images/img-logo.png" width="500" height="680" alt="Drew Hays" class="img-cover">
-            </div>
-
-          </div>
-
-          <div class="hero-content">
-
-            <h1 class="h1 big-title" data-i18n="welcome">Bring Your Ideas Into Life.</h1>
-
-            <div class="wrapper">
-              <a class="btn btn:hover download-btn" data-i18n-link="cv_link" hidden>
-                <span class="span" data-i18n="dwonload_cv">Download CV</span>
-
-                <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
-              </a>
-
-              <p class="hero-text" data-i18n="welcome_subline">
-                Let's build something extraordinary together
-              </p>
-            </div>
-
-          </div>
-
-          <img src="./images/hero-shape-1.png" width="559" height="232" alt="shape" class="shape shape-1">
-
-          <img src="./images/hero-shape-2.png" width="1358" height="497" alt="shape" class="shape shape-2">
-
-        </div>
-      </div>
-
-
-
-
-
-      <!-- 
-        - #SERVICE
-      -->
-
-      <section class="service text-center" aria-label="my services" id="service">
-        <div class="container">
-
-          <ul class="service-list">
-
-            <li class="service-item">
-              <div class="service-card" data-service-card>
-
-                <div class="card-icon">
-                  <img src="./images/ic-mob.svg" width="80" height="80" loading="lazy"
-                    alt="service icon">
-                </div>
-
-                <h3 class="card-title">
-                  <a href="#project" class="service_link" data-i18n="mobile_development">
-                    Mobile <br>
-                    Development
-                  </a>
-                </h3>
-
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-card" data-service-card>
-
-                <div class="card-icon">
-                  <img src="./images/ic-fe.svg" width="80" height="80" loading="lazy"
-                    alt="service icon">
-                </div>
-
-                <h3 class="card-title">
-                  <a href="#project" class="service_link" data-i18n="web_development">
-                    Web <br>
-                    Development
-                  </a>
-                </h3>
-
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-card" data-service-card>
-
-                <div class="card-icon">
-                  <img src="./images/ic-game.svg" width="80" height="80" loading="lazy"
-                    alt="service icon">
-                </div>
-
-                <h3 class="card-title">
-                  <a href="#project" class="service_link" data-i18n="game_development">
-                    Game <br>
-                    Development
-                  </a>
-                </h3>
-
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-card" data-service-card>
-
-                <div class="card-icon">
-                  <img src="./images/ic-be.svg" width="80" height="80" loading="lazy"
-                    alt="service icon">
-                </div>
-
-                <h3 class="card-title">
-                  <a href="#project" class="service_link" data-i18n="backend_development">
-                    Backend <br>
-                    Application
-                  </a>
-                </h3>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section class="section about" aria-label="about-me" id="about">
-        <div class="container">
-
-          <div class="tab-container">
-
-            <ul class="tab-btn-list">
-
-              <li class="tab-btn-item">
-                <button class="tab-btn title h6 active" data-tab-btn="about" data-i18n="tab_about">About Me</button>
-              </li>
-
-              <li class="tab-btn-item">
-                <button class="tab-btn title h6" data-tab-btn="skillset" data-i18n="tab_skills">Skills</button>
-              </li>
-
-              <li class="tab-btn-item">
-                <button class="tab-btn title h6" data-tab-btn="interview" data-i18n="tab_interview">Interview</button>
-              </li>
-
-            <div class="tab-content active" data-tab-content="about">
-              <div class="grid-list">
-                <figure class="about-banner img-holder" style="--width: ; --height: ;" data-tilt>
-                  <img src="./images/img-about.png" width="570" height="420" loading="lazy" alt="about banner" class="img-cover">
-                </figure>
-
-                <div class="about-content">
-                  <h2 class="h4 title section-title" data-i18n="about_title">
-                    Engineering Solutions Through Code.
-                  </h2>
-
-                  <p class="section-text" data-i18n="about_bio">
-                    I'm a Mechatronics Engineer and Founder of AIBITDEV, specializing in Android, Web, and Game Development. From prototyping to deployment—I bring ideas to life across all platforms.
-                  </p>
-
-                  <ul class="about-list">
-                    <li class="about-item">
-                      <p class="list-title" data-i18n="about_name">Name</p>
-                      <span class="span title h5" data-i18n="name">ADIMI Aimen Abderrahmane</span>
-                    </li>
-
-                    <li class="about-item">
-                      <p class="list-title" data-i18n="about_phone">Phone Number</p>
-                      <span class="span title h5" data-i18n="phone_number">+213553781225</span>
-                    </li>
-
-                    <li class="about-item">
-                      <p class="list-title" data-i18n="about_email">Email Address</p>
-                      <span class="span title h5">aimen19adimi@gmail.com</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-content" data-tab-content="skillset">
-              <div class="skills-container"> 
-                <div class="grid-list">
-                  <div class="skills-content-wrapper"> 
-                    <div class="skill-content">
-                      <h3 class="h4 title section-title" data-i18n="skills_title">
-                        Digital Superpowers
-                      </h3>
-
-                      <p class="section-text" data-i18n="skills_description">
-                        My toolkit spans from design to full-stack development, blending mechatronics with years of experience in programming. Each skill is a proven solution—refined through real-world projects and engineered for impact.
-                      </p>
-
-                      <ul class="skill-list">
-                        <li>
-                          <div class="skill-wrapper">
-                            <span class="span" data-i18n="mobile_dev">Mobile Development</span>
-                            <span class="value">95%</span>
-                          </div>
-                          <div class="progress-bar">
-                            <div class="progress-fill" style="width: 95%"></div>
-                          </div>
-                        </li>
-                        
-                        <li>
-                          <div class="skill-wrapper">
-                            <span class="span" data-i18n="web_dev">Web Development</span>
-                            <span class="value">80%</span>
-                          </div>
-                          <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%"></div>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div class="skill-wrapper">
-                            <span class="span" data-i18n="game_dev">Game Development</span>
-                            <span class="value">95%</span>
-                          </div>
-                          <div class="progress-bar">
-                            <div class="progress-fill" style="width: 95%"></div>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div class="skill-wrapper">
-                            <span class="span" data-i18n="backend_dev">Backend Development</span>
-                            <span class="value">75%</span>
-                          </div>
-                          <div class="progress-bar">
-                            <div class="progress-fill" style="width: 75%"></div>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div class="skill-wrapper">
-                            <span class="span" data-i18n="ui_ux">Design UI & UX</span>
-                            <span class="value">70%</span>
-                          </div>
-                          <div class="progress-bar">
-                            <div class="progress-fill" style="width: 70%"></div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <figure class="skills-banner img-holder" style="--width: ; --height: ;" data-tilt>
-                    <img src="./images/img-skills.png" width="570" height="420" loading="lazy" alt="about banner" class="img-cover">
-                  </figure>
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-content" data-tab-content="interview">
-              <div class="grid-list">
-                <figure class="about-banner img-holder" style="--width: ; --height: ;" data-tilt>
-                  <img src="./images/img-interview.png" width="570" height="420" loading="lazy" alt="about banner" class="img-cover">
-                </figure>
-
-                <div class="interview-script">
-
-                  <div class="accordion-item">
-                    <button class="accordion-question" aria-expanded="false">
-                      <h4 data-i18n="interview_q1">Who are you, and how did your career in tech begin?</h4>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-answer">
-                      <p data-i18n="interview_a1">I’m a Mechatronics Engineer, Ad Indie and the founder of AIBITDEV. My journey started with a fascination for how hardware and software interact. Over time, that curiosity led me into game development, web platforms, and mobile apps where I found a true passion for building experiences people can actually use.</p>
-                    </div>
-                  </div>
-
-                  <div class="accordion-item">
-                    <button class="accordion-question" aria-expanded="false">
-                      <h4 data-i18n="interview_q2">Why mechatronics? And how does it influence your software work today?</h4>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-answer">
-                      <p data-i18n="interview_a2">Mechatronics gave me a systems-thinking mindset—understanding how machines, and code work together. That training helped me become a better software developer, because I approach every project holistically: from the user experience to the backend logic, and sometimes even the physical interaction.</p>
-                    </div>
-                  </div>
-
-                  <div class="accordion-item">
-                    <button class="accordion-question" aria-expanded="false">
-                      <h4 data-i18n="interview_q3">What inspired you to start AIBITDEV?</h4>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-answer">
-                      <p data-i18n="interview_a3">I wanted to create a space where experimentation, creativity, and engineering meet. AIBITDEV started as a solo venture but quickly became my personal lab for building everything that is software related. It’s where vision becomes reality.</p>
-                    </div>
-                  </div>
-
-                  <div class="accordion-item">
-                    <button class="accordion-question" aria-expanded="false">
-                      <h4 data-i18n="interview_q4">You cover mobile, web, game, and backend development—how do you manage that range?</h4>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-answer">
-                      <p data-i18n="interview_a4">To me, they're different languages for solving problems. I don't believe in boxing myself into one category. I learn fast, iterate, and lean on strong fundamentals. It's all about understanding the user and choosing the right tools for the job.</p>
-                    </div>
-                  </div>
-
-                  <div class="accordion-item">
-                    <button class="accordion-question" aria-expanded="false">
-                      <h4 data-i18n="interview_q5">Last question—what advice would you give to someone starting in tech today?</h4>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-answer">
-                      <p data-i18n="interview_a5">Start small, but start now. Build things, break things, and never stop asking *why*. The tech will change, but your ability to think critically and adapt is your real superpower.</p>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-
-      </section>
-
-      <!-- 
-        - #CTA
-      -->
-
-      <section class="section cta" aria-label="work with me">
-        <div class="container">
-          <h2 class="title h2 section-title text-center" data-i18n="work_title">
-            Let's Work Together On Your Next Project!
-          </h2>
-
-          <a href="mailto:aimen19adimi@gmail.com" target="_blank" class="btn btn:hover" data-i18n="contact_btn">
-            <span class="span">Email Me</span>
-            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-          </a>
-        </div>
-      </section>
-
-      <!-- 
-        - #PROJECTS
-      -->
-
-    <section class="section project" aria-label="my latest projects" id="project">
-      <ul class="slider-list">
-        <!-- Project 1 -->
-        <li class="slider-item">
-          <div class="project-card text-center">
-            <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-              <img src="./images/project-1.jpg" width="1000" height="763" loading="lazy"
-                  alt="Godot Engine project" class="img-cover">
-              <a href="./images/project-1.jpg" target="_blank" class="btn btn:hover" data-i18n="view_fullscreen">
-                <span class="span">FullScreen</span>
-                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-              </a>
-            </div>
-            <div class="card-content">
-              <p class="card-subtitle" data-i18n="project_category_games">Games Projects</p>
-            </div>
-          </div>
-        </li>
-
-        <!-- Project 2 -->
-        <li class="slider-item">
-          <div class="project-card text-center">
-            <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-              <img src="./images/project-2.jpg" width="1000" height="763" loading="lazy"
-                  alt="Android Studio project" class="img-cover">
-              <a href="./images/project-2.jpg" target="_blank" class="btn btn:hover" data-i18n="view_fullscreen">
-                <span class="span">FullScreen</span>
-                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-              </a>
-            </div>
-            <div class="card-content">
-              <p class="card-subtitle" data-i18n="project_category_mobile">Mobile Projects</p>
-            </div>
-          </div>
-        </li>
-
-        <!-- Project 3 -->
-        <li class="slider-item">
-          <div class="project-card text-center">
-            <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-              <img src="./images/project-3.jpg" width="1000" height="763" loading="lazy"
-                  alt="React project" class="img-cover">
-              <a href="./images/project-3.jpg" target="_blank" class="btn btn:hover" data-i18n="view_fullscreen">
-                <span class="span">View Image</span>
-                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-              </a>
-            </div>
-            <div class="card-content">
-              <p class="card-subtitle" data-i18n="project_category_web">Web Projects</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-      <!-- 
-        - #CONTACT
-      -->
-
-      <section class="section contact" aria-label="contact me" id="contact">
-        <div class="container">
-
-          <h2 class="title h2 section-title" data-i18n="contact_title">Get In Touch</h2>
-
-          <div class="contact-content">
-
-            <ul class="contact-list">
-
-              <li class="contact-item">
-
-                <div class="item-icon">
-                  <img src="./images/contact-icon-1.png" width="50" height="50" loading="lazy"
-                    alt="contact icon">
-                </div>
-
-                <div>
-                  <span class="title h6" data-i18n="phone_number">(+213)553781225</span>
-                </div>
-
-              </li>
-
-              <li class="contact-item">
-
-                <div class="item-icon">
-                  <img src="./images/contact-icon-2.png" width="50" height="50" loading="lazy"
-                    alt="contact icon">
-                </div>
-
-                <div>
-                  <address class="title h6" data-i18n="contact_address">
-                    Boumerdes, Algeria
-                  </address>
-                </div>
-
-              </li>
-
-              <li class="contact-item">
-
-                <div class="item-icon">
-                  <img src="./images/contact-icon-3.png" width="50" height="50" loading="lazy"
-                    alt="contact icon">
-                </div>
-
-                <div>
-                  <span class="title h6">aimen19adimi@gmail.com</span>
-                </div>
-
-              </li>
-
-            </ul>
-            
-            <div class="form-column">
-              <p class="form-description" data-i18n="form_description">
-                Have a project in mind? Fill out our quick form and we'll get back to you soon.
-              </p>
-              <a class="btn btn:hover form-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd9USQb85cA4DcF1TmgPsuPlrrxX3aE0nVlGxuv8xmDetButQ/viewform?usp=dialog" target="_blank">
-                <span class="span" data-i18n="contact_form">Fill Out Our Form</span>
-
-                <ion-icon name="logo-google" aria-hidden="true"></ion-icon>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-    </article>
-  </main>
-
-  <!-- 
-    - #FOOTER
-  -->
-
-      <footer class="footer">
-        <div class="container">
-          <p class="copyright" data-i18n="design_credits">
-            Credits: Design By @codewithsadee
-          </p>
-          
-          <p class="copyright" data-i18n="copyright_text">
-            Copyright reserved by AIBITDEV 2025
-          </p>
-          
-          <a href="#top" class="back-top-btn" data-i18n="back_to_top">
-            <span class="span">Back To Top</span>
-            <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
-          </a>
-        </div>
-      </footer>
-
-  <!-- 
-    - #CUSTOM CURSOR
-  -->
-
-  <div class="cursor-dot" data-cursor></div>
-  <div class="cursor-outline" data-cursor></div>
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./scripts/main-script.js"></script>
-  <script src="./scripts/language-switcher.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script>
+    const LAST = 23;
+    const FLIGHT_END = 22;
+    const FRAME_MS = 46;
+
+    const stage = document.getElementById("stage");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const SPEED = 118;
+    const laptopQuery = window.matchMedia("(min-width: 900px)");
+
+    const bugs = [...document.querySelectorAll(".butterfly")].map((el, index) => ({
+      el: el,
+      turn: el.querySelector(".turn"),
+      sprite: el.querySelector(".sprite"),
+      x: 0, y: 0, vx: SPEED, vy: SPEED * 0.4, heading: index,
+      wander: Math.random() * Math.PI * 2,
+      caught: false, poseHeld: false,
+      pointerX: 0, pointerY: 0, pointerType: "mouse",
+      prevX: 0, prevY: 0,
+      frame: index * 7,
+      frameAcc: index * 10
+    }));
+    let state = bugs[0];
+
+    function bugRadius(bug) {
+      return Math.hypot(bug.el.offsetWidth, bug.el.offsetHeight) / 2 + 4;
+    }
+
+    function screenBox() {
+      const edge = 14;
+      return {
+        left: edge,
+        right: Math.max(edge + 4, stage.clientWidth - edge),
+        top: edge,
+        bottom: Math.max(edge + 4, stage.clientHeight - edge)
+      };
+    }
+
+    function blockedBox() {
+      const w = stage.clientWidth;
+      const h = stage.clientHeight;
+      if (laptopQuery.matches) {
+        const gap = 16;
+        return { left: -80, right: w / 2 + gap, top: -80, bottom: h + 80 };
+      }
+      const main = document.querySelector("main");
+      const stageRect = stage.getBoundingClientRect();
+      const rect = main.getBoundingClientRect();
+      const pad = 10;
+      const gutter = Math.min(rect.left - stageRect.left, stageRect.right - rect.right);
+      const left = rect.left - stageRect.left - pad;
+      const right = rect.right - stageRect.left + pad;
+      return {
+        left: gutter < 72 ? -80 : left,
+        right: gutter < 72 ? w + 80 : right,
+        top: rect.top - stageRect.top - pad,
+        bottom: rect.bottom - stageRect.top + pad
+      };
+    }
+
+    function clampScreen(bug) {
+      const box = screenBox();
+      if (bug.x < box.left) {
+        bug.x = box.left;
+        bug.wander = 0.4;
+      } else if (bug.x > box.right) {
+        bug.x = box.right;
+        bug.wander = Math.PI - 0.4;
+      }
+      if (bug.y < box.top) {
+        bug.y = box.top;
+        bug.wander = Math.PI / 2;
+      } else if (bug.y > box.bottom) {
+        bug.y = box.bottom;
+        bug.wander = -Math.PI / 2;
+      }
+    }
+
+    function pushOut(bug) {
+      const block = blockedBox();
+      if (bug.x <= block.left || bug.x >= block.right || bug.y <= block.top || bug.y >= block.bottom) return;
+      if (laptopQuery.matches) {
+        bug.x = block.right;
+        bug.wander = 0;
+        return;
+      }
+      const left = bug.x - block.left;
+      const right = block.right - bug.x;
+      const top = bug.y - block.top;
+      const bottom = block.bottom - bug.y;
+      const nearest = Math.min(left, right, top, bottom);
+      if (nearest === left) {
+        bug.x = block.left;
+        bug.wander = Math.PI;
+      } else if (nearest === right) {
+        bug.x = block.right;
+        bug.wander = 0;
+      } else if (nearest === top) {
+        bug.y = block.top;
+        bug.wander = -Math.PI / 2;
+      } else {
+        bug.y = block.bottom;
+        bug.wander = Math.PI / 2;
+      }
+    }
+
+    function pairGap(a, b) {
+      return (bugRadius(a) + bugRadius(b)) * 0.62;
+    }
+
+    function headAlong(bug) {
+      const pace = Math.hypot(bug.vx, bug.vy) || 1;
+      bug.vx = (bug.vx / pace) * SPEED;
+      bug.vy = (bug.vy / pace) * SPEED;
+      bug.wander = Math.atan2(bug.vy, bug.vx);
+    }
+
+    function bounceScreen(bug) {
+      const box = screenBox();
+      let hit = false;
+      if (bug.x < box.left) {
+        bug.x = box.left;
+        bug.vx = Math.max(Math.abs(bug.vx), SPEED * 0.65);
+        hit = true;
+      } else if (bug.x > box.right) {
+        bug.x = box.right;
+        bug.vx = -Math.max(Math.abs(bug.vx), SPEED * 0.65);
+        hit = true;
+      }
+      if (bug.y < box.top) {
+        bug.y = box.top;
+        bug.vy = Math.max(Math.abs(bug.vy), SPEED * 0.65);
+        hit = true;
+      } else if (bug.y > box.bottom) {
+        bug.y = box.bottom;
+        bug.vy = -Math.max(Math.abs(bug.vy), SPEED * 0.65);
+        hit = true;
+      }
+      if (hit) headAlong(bug);
+    }
+
+    function bounceContent(bug) {
+      const block = blockedBox();
+      if (bug.x <= block.left || bug.x >= block.right || bug.y <= block.top || bug.y >= block.bottom) return;
+      if (laptopQuery.matches) {
+        bug.x = block.right;
+        bug.vx = Math.max(Math.abs(bug.vx), SPEED * 0.65);
+        headAlong(bug);
+        return;
+      }
+      const fromX = bug.prevX <= block.left || bug.prevX >= block.right;
+      const fromY = bug.prevY <= block.top || bug.prevY >= block.bottom;
+      if (fromX || !fromY) {
+        if (bug.prevX <= block.left || (!fromX && bug.x - block.left <= block.right - bug.x)) {
+          bug.x = block.left;
+          bug.vx = -Math.max(Math.abs(bug.vx), SPEED * 0.65);
+        } else {
+          bug.x = block.right;
+          bug.vx = Math.max(Math.abs(bug.vx), SPEED * 0.65);
+        }
+      }
+      if (fromY || !fromX) {
+        if (bug.prevY <= block.top || (!fromY && bug.y - block.top <= block.bottom - bug.y)) {
+          bug.y = block.top;
+          bug.vy = -Math.max(Math.abs(bug.vy), SPEED * 0.65);
+        } else {
+          bug.y = block.bottom;
+          bug.vy = Math.max(Math.abs(bug.vy), SPEED * 0.65);
+        }
+      }
+      headAlong(bug);
+    }
+
+    function separateAll() {
+      for (let pass = 0; pass < 4; pass++) {
+        for (let i = 0; i < bugs.length; i++) {
+          for (let j = i + 1; j < bugs.length; j++) {
+            const a = bugs[i];
+            const b = bugs[j];
+            const dx = b.x - a.x;
+            const dy = b.y - a.y;
+            const dist = Math.hypot(dx, dy) || 0.01;
+            const min = pairGap(a, b);
+            if (dist >= min) continue;
+            const overlap = min - dist;
+            const nx = dx / dist;
+            const ny = dy / dist;
+            if (a.caught && !b.caught) {
+              b.x += nx * overlap;
+              b.y += ny * overlap;
+            } else if (b.caught && !a.caught) {
+              a.x -= nx * overlap;
+              a.y -= ny * overlap;
+            } else if (!a.caught && !b.caught) {
+              a.x -= nx * overlap * 0.5;
+              a.y -= ny * overlap * 0.5;
+              b.x += nx * overlap * 0.5;
+              b.y += ny * overlap * 0.5;
+            }
+          }
+        }
+        bugs.forEach((bug) => {
+          if (bug.caught) {
+            clampScreen(bug);
+            pushOut(bug);
+          } else {
+            bounceScreen(bug);
+            bounceContent(bug);
+          }
+        });
+      }
+      const held = bugs.find((bug) => bug.caught);
+      if (!held) return;
+      bugs.forEach((other) => {
+        if (other === held) return;
+        const dx = held.x - other.x;
+        const dy = held.y - other.y;
+        const dist = Math.hypot(dx, dy) || 0.01;
+        const min = pairGap(held, other);
+        if (dist >= min) return;
+        held.x = other.x + (dx / dist) * min;
+        held.y = other.y + (dy / dist) * min;
+      });
+      clampScreen(held);
+      pushOut(held);
+    }
+
+    function launch(angle) {
+      let vx = Math.cos(angle);
+      let vy = Math.sin(angle);
+      if (Math.abs(vx) < 0.28) vx = Math.sign(vx || 1) * 0.28;
+      if (Math.abs(vy) < 0.28) vy = Math.sign(vy || 1) * 0.28;
+      const length = Math.hypot(vx, vy);
+      state.vx = (vx / length) * SPEED;
+      state.vy = (vy / length) * SPEED;
+    }
+
+    function place(index) {
+      const box = screenBox();
+      const col = index % 2;
+      const row = Math.floor(index / 2);
+      if (laptopQuery.matches) {
+        const block = blockedBox();
+        const left = block.right;
+        const right = box.right;
+        state.x = left + (right - left) * (0.3 + col * 0.4);
+        state.y = box.top + (box.bottom - box.top) * (0.24 + row * 0.48);
+      } else {
+        const block = blockedBox();
+        state.x = box.left + (box.right - box.left) * (0.3 + col * 0.4);
+        state.y = row === 0
+          ? (box.top + Math.max(box.top, block.top)) / 2
+          : (Math.min(box.bottom, block.bottom) + box.bottom) / 2;
+      }
+      bounceScreen(state);
+      bounceContent(state);
+      state.prevX = state.x;
+      state.prevY = state.y;
+      launch(Math.random() * Math.PI * 2);
+      if (reduce) {
+        state.frame = LAST;
+        state.poseHeld = true;
+      }
+      draw();
+    }
+
+    function point(event) {
+      const rect = stage.getBoundingClientRect();
+      return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+    }
+
+    function angleDelta(target, current) {
+      let delta = target - current;
+      while (delta > Math.PI) delta -= Math.PI * 2;
+      while (delta < -Math.PI) delta += Math.PI * 2;
+      return delta;
+    }
+
+    function face(dt) {
+      const speed = Math.hypot(state.vx, state.vy);
+      if (speed < 8) return;
+      const target = Math.atan2(state.vy, state.vx);
+      state.heading += angleDelta(target, state.heading) * Math.min(1, dt * 4.2);
+    }
+
+    function mixAngle(from, to, amount) {
+      return from + angleDelta(to, from) * Math.min(1, Math.max(0, amount));
+    }
+
+    function flyGently(dt) {
+      state.wander += (Math.random() - 0.5) * 0.7 * dt;
+      let desired = state.wander;
+      bugs.forEach((other) => {
+        if (other === state) return;
+        const dx = state.x - other.x;
+        const dy = state.y - other.y;
+        const dist = Math.hypot(dx, dy) || 0.01;
+        const min = pairGap(state, other) * 1.15;
+        if (dist < min) desired = mixAngle(desired, Math.atan2(dy, dx), (min - dist) / min);
+      });
+      state.wander = desired;
+
+      const ease = Math.min(1, dt * 0.9);
+      state.vx += (Math.cos(desired) * SPEED - state.vx) * ease;
+      state.vy += (Math.sin(desired) * SPEED - state.vy) * ease;
+      const pace = Math.hypot(state.vx, state.vy) || 1;
+      state.vx = (state.vx / pace) * SPEED;
+      state.vy = (state.vy / pace) * SPEED;
+      state.x += state.vx * dt;
+      state.y += state.vy * dt;
+
+      bounceScreen(state);
+      bounceContent(state);
+    }
+
+    function advanceFrame(dt) {
+      if (reduce) {
+        state.frame = LAST;
+        state.poseHeld = true;
+        return;
+      }
+      state.frameAcc += dt * 1000;
+      while (state.frameAcc >= FRAME_MS) {
+        state.frameAcc -= FRAME_MS;
+        if (state.caught) {
+          if (state.frame >= LAST) {
+            state.frame = LAST;
+            state.poseHeld = true;
+            state.frameAcc = 0;
+            break;
+          }
+          state.frame += 1;
+          if (state.frame === LAST) state.poseHeld = true;
+        } else {
+          state.poseHeld = false;
+          state.frame = state.frame >= FLIGHT_END ? 0 : state.frame + 1;
+        }
+      }
+    }
+
+    function step(dt, now) {
+      state.prevX = state.x;
+      state.prevY = state.y;
+      advanceFrame(dt);
+
+      if (state.caught) {
+        const lift = state.pointerType === "touch" ? -52 : 0;
+        const follow = 1 - Math.exp(-16 * dt);
+        state.x += (state.pointerX - state.x) * follow;
+        state.y += (state.pointerY + lift - state.y) * follow;
+        state.vx = (state.x - state.prevX) / Math.max(dt, 0.008);
+        state.vy = (state.y - state.prevY) / Math.max(dt, 0.008);
+        face(dt);
+        clampScreen(state);
+        pushOut(state);
+        return;
+      }
+
+      if (reduce) return;
+
+      flyGently(dt);
+      face(dt);
+    }
+
+    function draw() {
+      state.el.style.transform = "translate3d(" + state.x + "px, " + state.y + "px, 0) translate(-50%, -50%)";
+      state.turn.style.transform = "rotate(" + (state.heading + Math.PI / 2) + "rad)";
+      const w = state.sprite.offsetWidth;
+      const h = state.sprite.offsetHeight;
+      const col = state.frame % 4;
+      const row = Math.floor(state.frame / 4);
+      const position = (-col * w) + "px " + (-row * h) + "px";
+      state.sprite.style.webkitMaskPosition = position;
+      state.sprite.style.maskPosition = position;
+    }
+
+    let last = performance.now();
+    function frameLoop(now) {
+      const dt = Math.min(0.034, (now - last) / 1000);
+      last = now;
+      bugs.forEach((bug) => {
+        state = bug;
+        step(dt, now);
+      });
+      separateAll();
+      bugs.forEach((bug) => {
+        state = bug;
+        draw();
+      });
+      requestAnimationFrame(frameLoop);
+    }
+
+    function catchButterfly(pointerType, x, y) {
+      if (state.caught) return;
+      state.caught = true;
+      state.pointerType = pointerType;
+      state.pointerX = x;
+      state.pointerY = y;
+      state.el.classList.add("caught");
+      state.el.setAttribute("aria-pressed", "true");
+      document.body.classList.add("holding");
+    }
+
+    function releaseButterfly() {
+      if (!state.caught) return;
+      state.caught = false;
+      state.poseHeld = false;
+      state.el.classList.remove("caught");
+      state.el.setAttribute("aria-pressed", "false");
+      if (!bugs.some((bug) => bug.caught)) document.body.classList.remove("holding");
+      if (reduce) return;
+      const block = blockedBox(state);
+      const speed = Math.hypot(state.vx, state.vy);
+      const away = Math.atan2(state.y - (block.top + block.bottom) / 2, state.x - (block.left + block.right) / 2);
+      launch(speed > 40 ? Math.atan2(state.vy, state.vx) : away);
+      const into = Math.atan2((block.top + block.bottom) / 2 - state.y, (block.left + block.right) / 2 - state.x);
+      if (Math.abs(angleDelta(into, Math.atan2(state.vy, state.vx))) < 0.7) launch(away);
+    }
+
+    function syncPointer(event) {
+      const here = point(event);
+      state.pointerX = here.x;
+      state.pointerY = here.y;
+      if (event.pointerType) state.pointerType = event.pointerType;
+    }
+
+    bugs.forEach((bug) => {
+      bug.el.addEventListener("pointerdown", (event) => {
+        if (event.pointerType === "mouse" && event.button !== 0) return;
+        if (bugs.some((item) => item.caught)) return;
+        event.preventDefault();
+        state = bug;
+        try { bug.el.setPointerCapture(event.pointerId); } catch (error) {}
+        syncPointer(event);
+        catchButterfly(event.pointerType, state.pointerX, state.pointerY);
+      });
+      bug.el.addEventListener("keydown", (event) => {
+        if (event.code !== "Space" && event.code !== "Enter") return;
+        if (bugs.some((item) => item.caught)) return;
+        event.preventDefault();
+        state = bug;
+        catchButterfly("keyboard", state.x, state.y);
+      });
+      bug.el.addEventListener("keyup", (event) => {
+        if (event.code !== "Space" && event.code !== "Enter") return;
+        state = bug;
+        releaseButterfly();
+      });
+    });
+
+    document.addEventListener("pointermove", (event) => {
+      const bug = bugs.find((item) => item.caught);
+      if (!bug) return;
+      state = bug;
+      syncPointer(event);
+    });
+
+    document.addEventListener("pointerup", (event) => {
+      const bug = bugs.find((item) => item.caught);
+      if (!bug) return;
+      state = bug;
+      syncPointer(event);
+      releaseButterfly();
+    });
+
+    document.addEventListener("pointercancel", () => {
+      const bug = bugs.find((item) => item.caught);
+      if (!bug) return;
+      state = bug;
+      releaseButterfly();
+    });
+
+    document.addEventListener("visibilitychange", () => { last = performance.now(); });
+
+    const modeButton = document.getElementById("mode");
+    const lede = document.querySelector(".lede");
+    const lang = document.getElementById("lang");
+    const langLive = document.getElementById("lang-live");
+    const description = document.querySelector('meta[name="description"]');
+    const languages = ["en", "fr", "ar"];
+    const copy = {
+      en: {
+        title: "AIBITDEV — We moved",
+        description: "We moved to aibitdev.com. Email aibitdevdz@gmail.com or call +213 553 781 225.",
+        lede: "We moved.",
+        slogan: "Bringing digital ideas to life.",
+        night: "Switch to night",
+        day: "Switch to day",
+        butterfly: "Butterfly. Press and hold to catch it, then release to let it fly.",
+        group: "Language",
+        name: "English",
+        dir: "ltr"
+      },
+      fr: {
+        title: "AIBITDEV — Nous avons déménagé",
+        description: "Nous avons déménagé sur aibitdev.com. Écrivez à aibitdevdz@gmail.com ou appelez le +213 553 781 225.",
+        lede: "Nous avons déménagé.",
+        slogan: "Donner vie aux idées numériques.",
+        night: "Passer en mode nuit",
+        day: "Passer en mode jour",
+        butterfly: "Papillon. Maintenez pour l’attraper, puis relâchez pour le laisser s’envoler.",
+        group: "Langue",
+        name: "Français",
+        dir: "ltr"
+      },
+      ar: {
+        title: "AIBITDEV — انتقلنا",
+        description: "انتقلنا إلى aibitdev.com. راسلوا aibitdevdz@gmail.com أو اتصلوا على +213 553 781 225.",
+        lede: "انتقلنا.",
+        slogan: "نحوّل الأفكار الرقمية إلى واقع.",
+        night: "التبديل إلى الليل",
+        day: "التبديل إلى النهار",
+        butterfly: "فراشة. اضغط مطولاً لالتقاطها، ثم أفلت لتطير من جديد.",
+        group: "اللغة",
+        name: "العربية",
+        dir: "rtl"
+      }
+    };
+    let currentLang = "en";
+    let langSpin = 0;
+    let ledeTimer = 0;
+
+    function applyNight(on) {
+      document.body.classList.toggle("night", on);
+      modeButton.setAttribute("aria-pressed", on ? "true" : "false");
+      const pack = copy[currentLang];
+      modeButton.setAttribute("aria-label", on ? pack.day : pack.night);
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", on ? "#140c22" : "#ffe7b0");
+      try { localStorage.setItem("aibitdev-night", on ? "1" : "0"); } catch (error) {}
+    }
+
+    function spinTo(index) {
+      const target = -index * 120;
+      const delta = ((target - langSpin) % 360 + 540) % 360 - 180;
+      langSpin += delta;
+      lang.style.setProperty("--spin", langSpin + "deg");
+    }
+
+    function applyLang(code, animate) {
+      const pack = copy[code];
+      if (!pack || (code === currentLang && document.documentElement.lang === code)) return;
+      currentLang = code;
+      document.documentElement.lang = code;
+      document.documentElement.dir = pack.dir || "ltr";
+      document.title = pack.title;
+      document.getElementById("slogan").textContent = pack.slogan;
+      description.setAttribute("content", pack.description);
+      lang.setAttribute("aria-label", pack.group);
+      bugs.forEach((bug) => bug.el.setAttribute("aria-label", pack.butterfly));
+      modeButton.setAttribute("aria-label", document.body.classList.contains("night") ? pack.day : pack.night);
+      lang.querySelectorAll(".lang-mark").forEach((mark) => {
+        const on = mark.dataset.lang === code;
+        mark.setAttribute("aria-checked", on ? "true" : "false");
+        if (animate && on) mark.focus({ preventScroll: true });
+      });
+      spinTo(languages.indexOf(code));
+      clearTimeout(ledeTimer);
+      if (!animate || reduce) {
+        lede.classList.remove("swap");
+        lede.textContent = pack.lede;
+      } else {
+        lede.classList.add("swap");
+        ledeTimer = setTimeout(() => {
+          lede.textContent = pack.lede;
+          lede.classList.remove("swap");
+        }, reduce ? 0 : 160);
+      }
+      if (animate) langLive.textContent = pack.name;
+      try { localStorage.setItem("aibitdev-lang", code); } catch (error) {}
+    }
+
+    function initialLang() {
+      try {
+        const saved = localStorage.getItem("aibitdev-lang");
+        if (copy[saved]) return saved;
+      } catch (error) {}
+      const nav = (navigator.language || "en").toLowerCase();
+      if (nav.startsWith("ar")) return "ar";
+      if (nav.startsWith("fr")) return "fr";
+      return "en";
+    }
+
+    lang.addEventListener("click", (event) => {
+      const mark = event.target.closest(".lang-mark");
+      if (mark) {
+        applyLang(mark.dataset.lang, true);
+        return;
+      }
+      applyLang(languages[(languages.indexOf(currentLang) + 1) % languages.length], true);
+    });
+
+    lang.addEventListener("keydown", (event) => {
+      const index = languages.indexOf(currentLang);
+      if (event.code === "ArrowRight" || event.code === "ArrowDown") {
+        event.preventDefault();
+        applyLang(languages[(index + 1) % languages.length], true);
+      } else if (event.code === "ArrowLeft" || event.code === "ArrowUp") {
+        event.preventDefault();
+        applyLang(languages[(index + languages.length - 1) % languages.length], true);
+      }
+    });
+
+    function releaseCord() {
+      if (!modeButton.classList.contains("pull")) return;
+      modeButton.classList.remove("pull");
+      applyNight(!document.body.classList.contains("night"));
+    }
+
+    modeButton.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      event.preventDefault();
+      event.stopPropagation();
+      modeButton.classList.add("pull");
+      try { modeButton.setPointerCapture(event.pointerId); } catch (error) {}
+    });
+
+    modeButton.addEventListener("pointerup", releaseCord);
+    modeButton.addEventListener("pointercancel", releaseCord);
+    modeButton.addEventListener("keydown", (event) => {
+      if (event.code !== "Enter" && event.code !== "Space") return;
+      event.preventDefault();
+      modeButton.classList.add("pull");
+    });
+    modeButton.addEventListener("keyup", (event) => {
+      if (event.code !== "Enter" && event.code !== "Space") return;
+      releaseCord();
+    });
+
+    try { applyNight(localStorage.getItem("aibitdev-night") === "1"); } catch (error) {}
+    applyLang(initialLang(), false);
+
+    window.addEventListener("resize", () => {
+      bugs.forEach((bug) => {
+        clampScreen(bug);
+        pushOut(bug);
+      });
+    });
+
+    bugs.forEach((bug, index) => {
+      state = bug;
+      place(index);
+    });
+    requestAnimationFrame(frameLoop);
+  </script>
 </body>
-
 </html>
