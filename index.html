@@ -276,6 +276,12 @@
       background: transparent;
       cursor: pointer;
       touch-action: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cord:focus {
+      outline: none;
     }
 
     .cord-hang {
@@ -578,15 +584,15 @@
       const main = document.querySelector("main");
       const stageRect = stage.getBoundingClientRect();
       const rect = main.getBoundingClientRect();
-      const pad = 10;
-      const gutter = Math.min(rect.left - stageRect.left, stageRect.right - rect.right);
-      const left = rect.left - stageRect.left - pad;
-      const right = rect.right - stageRect.left + pad;
+      const padY = 10;
+      const insetX = 40;
+      const left = rect.left - stageRect.left + insetX;
+      const right = rect.right - stageRect.left - insetX;
       return {
-        left: gutter < 72 ? -80 : left,
-        right: gutter < 72 ? w + 80 : right,
-        top: rect.top - stageRect.top - pad,
-        bottom: rect.bottom - stageRect.top + pad
+        left: left,
+        right: Math.max(left + 48, right),
+        top: rect.top - stageRect.top - padY,
+        bottom: rect.bottom - stageRect.top + padY
       };
     }
 
@@ -1146,8 +1152,14 @@
       try { modeButton.setPointerCapture(event.pointerId); } catch (error) {}
     });
 
-    modeButton.addEventListener("pointerup", releaseCord);
-    modeButton.addEventListener("pointercancel", releaseCord);
+    modeButton.addEventListener("pointerup", (event) => {
+      releaseCord();
+      if (event.pointerType !== "mouse") modeButton.blur();
+    });
+    modeButton.addEventListener("pointercancel", (event) => {
+      releaseCord();
+      if (event.pointerType !== "mouse") modeButton.blur();
+    });
     modeButton.addEventListener("keydown", (event) => {
       if (event.code !== "Enter" && event.code !== "Space") return;
       event.preventDefault();
