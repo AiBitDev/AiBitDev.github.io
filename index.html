@@ -170,6 +170,7 @@
       height: 92px;
       margin-top: 1.15rem;
       flex: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .lang-disc {
@@ -231,6 +232,8 @@
       opacity: 0.4;
       cursor: pointer;
       pointer-events: auto;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
       transform: translateX(-50%) rotate(calc(var(--i) * -120deg - var(--spin))) scale(1);
       transition: transform 0.72s cubic-bezier(0.16, 1.45, 0.32, 1), opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
     }
@@ -249,6 +252,12 @@
     }
 
     .lang-mark:hover { opacity: 0.85; }
+    .lang-mark:focus { outline: none; }
+
+    @media (hover: none) {
+      .lang-mark:focus,
+      .lang-mark:focus-visible { outline: none; }
+    }
 
     .sr {
       position: absolute;
@@ -1074,7 +1083,7 @@
       lang.style.setProperty("--spin", langSpin + "deg");
     }
 
-    function applyLang(code, animate) {
+    function applyLang(code, animate, fromKeys) {
       const pack = copy[code];
       if (!pack || (code === currentLang && document.documentElement.lang === code)) return;
       currentLang = code;
@@ -1089,7 +1098,7 @@
       lang.querySelectorAll(".lang-mark").forEach((mark) => {
         const on = mark.dataset.lang === code;
         mark.setAttribute("aria-checked", on ? "true" : "false");
-        if (animate && on) mark.focus({ preventScroll: true });
+        if (animate && on && fromKeys) mark.focus({ preventScroll: true });
       });
       spinTo(languages.indexOf(code));
       clearTimeout(ledeTimer);
@@ -1118,6 +1127,12 @@
       return "en";
     }
 
+    lang.addEventListener("pointerup", (event) => {
+      if (event.pointerType === "mouse") return;
+      const mark = event.target.closest(".lang-mark");
+      if (mark) mark.blur();
+    });
+
     lang.addEventListener("click", (event) => {
       const mark = event.target.closest(".lang-mark");
       if (mark) {
@@ -1131,10 +1146,10 @@
       const index = languages.indexOf(currentLang);
       if (event.code === "ArrowRight" || event.code === "ArrowDown") {
         event.preventDefault();
-        applyLang(languages[(index + 1) % languages.length], true);
+        applyLang(languages[(index + 1) % languages.length], true, true);
       } else if (event.code === "ArrowLeft" || event.code === "ArrowUp") {
         event.preventDefault();
-        applyLang(languages[(index + languages.length - 1) % languages.length], true);
+        applyLang(languages[(index + languages.length - 1) % languages.length], true, true);
       }
     });
 
